@@ -9,6 +9,8 @@ git clone https://github.com/rahulkj/spring-docker.git
 ## Modify the pom.xml
 Replace `<docker.image.prefix>rjain</docker.image.prefix>` with `<docker.image.prefix>your-docker-hub-username</docker.image.prefix>`
 
+**NOTE: Ensure you update your-docker-hub-username with your dockerhub username**
+
 ## Build the project
 Execute `mvn package docker:build`
 
@@ -20,12 +22,11 @@ Execute `mvn package docker:build`
 ## Pushing the image to docker hub
 `docker login`
 `docker push your-docker-hub-username/spring-docker`
-Access the url: http://<your-docker-conatiner-ip>:8080
+Access the url: `http://<your-docker-conatiner-ip>:8080`, ex: http://192.168.59.103:8080
 
 
 ## Deploying the image to lattice
 `ltc create spring-docker your-docker-hub-username/spring-docker`
 Access the url: http://spring-docker.192.168.11.11.xip.io
-
 
 Enjoy!
